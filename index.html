@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>The Ooni of Ife 10th Year Coronation Anniversary</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      .gradient-gold {
+        background: linear-gradient(
+          135deg,
+          #d4af37 0%,
+          #f4e5a1 50%,
+          #d4af37 100%
+        );
+      }
+      .curtain-shadow {
+        box-shadow: inset 0 0 100px rgba(212, 175, 55, 0.15);
+      }
+      .pattern-bg {
+        background-image: repeating-linear-gradient(
+          45deg,
+          transparent,
+          transparent 10px,
+          rgba(212, 175, 55, 0.03) 10px,
+          rgba(212, 175, 55, 0.03) 20px
+        );
+      }
+      .gold-border {
+        border: 3px solid #d4af37;
+        box-shadow: 0 0 20px rgba(212, 175, 55, 0.3),
+          inset 0 0 20px rgba(212, 175, 55, 0.1);
+      }
+      .hover-lift {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .hover-lift:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
+      }
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .fade-in-up {
+        animation: fadeInUp 1s ease-out forwards;
+      }
+      .delay-1 {
+        animation-delay: 0.2s;
+        opacity: 0;
+      }
+      .delay-2 {
+        animation-delay: 0.4s;
+        opacity: 0;
+      }
+      .delay-3 {
+        animation-delay: 0.6s;
+        opacity: 0;
+      }
+      .delay-4 {
+        animation-delay: 0.8s;
+        opacity: 0;
+      }
+    </style>
+  </head>
+  <body class="bg-white text-gray-900 overflow-x-hidden">
+    <!-- Header -->
+    <header
+      class="relative bg-gradient-to-b from-amber-50 to-white curtain-shadow"
+    >
+      <div class="absolute inset-0 pattern-bg opacity-40"></div>
+      <div class="container mx-auto px-4 py-4 relative z-10">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-3 sm:gap-4">
+            <img
+              src="img/logo/oduduwa.png"
+              alt="House of Oduduwa"
+              class="h-12 w-12 sm:h-16 sm:w-16 object-contain"
+            />
+            <img
+              src="img/logo/students-union.png"
+              alt="Great Ife Students Union"
+              class="h-10 w-10 sm:h-14 sm:w-14 object-contain"
+            />
+            <div class="hidden sm:block">
+              <h1 class="text-sm font-semibold uppercase text-amber-800">
+                House of Oduduwa
+              </h1>
+              <p class="text-xs text-gray-600">
+                Great Ife Students' Union • 10th Coronation
+              </p>
+            </div>
+          </div>
+          <nav class="hidden md:flex gap-6 text-sm font-medium">
+            <a
+              href="#about"
+              class="hover:text-amber-600 transition"
+              >About</a
+            >
+            <a
+              href="#lineup"
+              class="hover:text-amber-600 transition"
+              >Line-up</a
+            >
+            <a
+              href="#tickets"
+              class="hover:text-amber-600 transition"
+              >Tickets</a
+            >
+            <a
+              href="#contact"
+              class="hover:text-amber-600 transition"
+              >Contact</a
+            >
+          </nav>
+          <button
+            onclick="document.getElementById('tickets').scrollIntoView()"
+            class="hidden md:inline-block gradient-gold text-white px-4 py-2 rounded-2xl shadow hover-lift font-semibold"
+          >
+            Get Tickets
+          </button>
+          <button
+            id="menuBtn"
+            class="md:hidden p-2 text-amber-800"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <!-- Mobile Menu -->
+      <div
+        id="mobileMenu"
+        class="hidden md:hidden bg-white/95 backdrop-blur shadow-lg mx-4 rounded-xl p-4 absolute left-0 right-0 z-50"
+      >
+        <nav class="flex flex-col gap-3 text-sm font-medium">
+          <a
+            href="#about"
+            class="hover:text-amber-600 py-2"
+            >About</a
+          >
+          <a
+            href="#lineup"
+            class="hover:text-amber-600 py-2"
+            >Line-up</a
+          >
+          <a
+            href="#tickets"
+            class="hover:text-amber-600 py-2"
+            >Tickets</a
+          >
+          <a
+            href="#contact"
+            class="hover:text-amber-600 py-2"
+            >Contact</a
+          >
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section
+      id="about"
+      class="bg-white py-8 md:py-12"
+    >
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <div
+            class="bg-white/80 backdrop-blur rounded-2xl p-6 sm:p-10 shadow-lg text-center fade-in-up"
+          >
+            <h2
+              class="mt-3 text-3xl sm:text-5xl font-extrabold tracking-tight text-amber-800"
+            >
+              <span class="text-4xl sm:text-6xl font">10TH YEAR</span><br />
+              CORONATION
+            </h2>
+            <p class="mt-2 text-lg sm:text-xl font-semibold text-gray-700">
+              A Royal Celebration • A Cultural Legacy
+            </p>
+            <div
+              class="mt-6 flex flex-col sm:flex-row items-center justify-center gap-4"
+            >
+              <div class="text-center sm:text-left">
+                <p class="text-sm text-gray-600">Honouring</p>
+                <h3 class="text-xl font-bold text-amber-800">
+                  His Imperial Majesty — The Ooni of Ife
+                </h3>
+              </div>
+              <div class="h-0.5 w-24 gradient-gold hidden sm:block"></div>
+              <div class="text-center sm:text-left">
+                <p class="text-sm text-gray-600">Featuring</p>
+                <h3 class="text-2xl font-bold text-amber-800">Davido</h3>
+                <p class="text-xs text-gray-500">Special Guest Artist</p>
+              </div>
+            </div>
+            <div
+              class="mt-8 flex flex-col sm:flex-row items-center gap-4 justify-center"
+            >
+              <div class="flex gap-3">
+                <a
+                  href="#tickets"
+                  class="inline-block gradient-gold text-white px-6 py-3 rounded-full font-semibold shadow-lg hover-lift"
+                  >Get Tickets</a
+                >
+                <a
+                  href="#contact"
+                  class="inline-block border-2 border-amber-600 text-amber-700 px-5 py-3 rounded-full font-medium hover:bg-amber-50 transition"
+                  >Inquiries</a
+                >
+              </div>
+            </div>
+            <p class="mt-6 text-sm text-gray-600">
+              Limited slots available • First come, first served
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Lineup -->
+    <section
+      id="lineup"
+      class="bg-gradient-to-b from-white to-amber-50 py-12"
+    >
+      <div class="container mx-auto px-4">
+        <div
+          class="grid md:grid-cols-2 gap-8 md:gap-12 mb-12 max-w-5xl mx-auto"
+        >
+          <div class="text-center fade-in-up delay-1">
+            <div
+              class="gold-border rounded-xl p-2 bg-gradient-to-br from-amber-100 to-white hover-lift"
+            >
+              <img
+                src="img/profile/davido.jpg"
+                alt="Davido"
+                class="w-full h-80 object-cover rounded-lg"
+              />
+            </div>
+            <h3 class="text-3xl md:text-4xl font-bold text-amber-800 mt-6 mb-2">
+              Davido
+            </h3>
+            <p class="text-lg text-gray-700">Special Guest Artist</p>
+          </div>
+          <div class="text-center fade-in-up delay-2">
+            <div
+              class="gold-border rounded-xl p-2 bg-gradient-to-br from-amber-100 to-white hover-lift"
+            >
+              <img
+                src="img/profile/ooni.jpg"
+                alt="Ooni of Ife"
+                class="w-full h-80 object-cover rounded-lg"
+              />
+            </div>
+            <h3 class="text-3xl md:text-4xl font-bold text-amber-800 mt-6 mb-2">
+              HIS IMPERIAL MAJESTY
+            </h3>
+            <p class="text-xl text-gray-700">The Ooni of Ife</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Info Cards -->
+    <section class="bg-amber-50 py-12">
+      <div class="container mx-auto px-4">
+        <div
+          class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-12 fade-in-up delay-3"
+        >
+          <div
+            class="shadow-lg rounded-xl p-6 bg-gradient-to-br from-white to-amber-50 hover-lift text-center"
+          >
+            <p class="text-amber-800 text-lg font-bold mb-3">VENUE</p>
+            <p class="text-gray-900 text-2xl font-bold">Anticipate</p>
+          </div>
+          <div
+            class="shadow-lg rounded-xl p-6 bg-gradient-to-br from-white to-amber-50 hover-lift text-center"
+          >
+            <p class="text-amber-800 text-lg font-bold mb-3">DATE</p>
+            <p class="text-gray-900 text-2xl font-bold">Anticipate</p>
+          </div>
+          <div
+            class="shadow-lg rounded-xl p-6 bg-gradient-to-br from-white to-amber-50 hover-lift text-center"
+          >
+            <p class="text-amber-800 text-lg font-bold mb-3">TICKET POLICY</p>
+            <p class="text-gray-900 text-lg font-bold">Limited • First Come</p>
+          </div>
+        </div>
+        <div class="max-w-3xl mx-auto text-center">
+          <p class="text-gray-600 text-lg leading-relaxed mb-6">
+            Join us in celebrating a decade of exemplary leadership, cultural
+            preservation, and royal excellence as we honor His Imperial Majesty,
+            the Ooni of Ife.
+          </p>
+          <p class="text-gray-600 text-lg leading-relaxed">
+            Experience an unforgettable night of culture, music, and celebration
+            featuring Africa's biggest superstar, Davido.
+          </p>
+          <ul class="mt-6 space-y-3 text-gray-700 text-left max-w-md mx-auto">
+            <li class="flex items-start gap-3">
+              <span class="text-amber-600">◆</span> Cultural performances and
+              royal tributes
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-amber-600">◆</span> Live concert by Davido
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-amber-600">◆</span> VIP meet-and-greet (limited)
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tickets -->
+    <section
+      id="tickets"
+      class="bg-white py-12"
+    >
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h3 class="text-2xl font-bold text-amber-800 text-center mb-8">
+            Tickets
+          </h3>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 fade-in-up delay-4">
+            <div
+              class="shadow-lg rounded-xl p-6 bg-white text-center hover-lift"
+            >
+              <div class="text-lg font-medium text-gray-700">Early Bird</div>
+              <div class="mt-3 text-3xl font-bold text-amber-800">₦???</div>
+              <div class="mt-5">
+                <button
+                  class="px-6 py-2 gradient-gold text-white rounded-full font-semibold hover-lift"
+                >
+                  Buy
+                </button>
+              </div>
+            </div>
+            <div
+              class="shadow-lg rounded-xl p-6 bg-gradient-to-br from-amber-50 to-white text-center hover-lift border-amber-400"
+            >
+              <div class="text-lg font-medium text-amber-700">Regular</div>
+              <div class="mt-3 text-3xl font-bold text-amber-800">₦???</div>
+              <div class="mt-5">
+                <button
+                  class="px-6 py-2 gradient-gold text-white rounded-full font-semibold hover-lift"
+                >
+                  Buy
+                </button>
+              </div>
+            </div>
+            <div
+              class="shadow-lg rounded-xl p-6 bg-white text-center hover-lift"
+            >
+              <div class="text-lg font-medium text-gray-700">VIP</div>
+              <div class="mt-3 text-3xl font-bold text-amber-800">₦???</div>
+              <div class="mt-5">
+                <button
+                  class="px-6 py-2 gradient-gold text-white rounded-full font-semibold hover-lift"
+                >
+                  Request
+                </button>
+              </div>
+            </div>
+          </div>
+          <p class="mt-6 text-center text-sm text-gray-600">
+            Note: Tickets are limited. Purchase early to secure your spot.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer
+      id="contact"
+      class="bg-gradient-to-b from-amber-50 to-amber-100 py-10"
+    >
+      <div class="container mx-auto px-4">
+        <div
+          class="flex flex-col md:flex-row justify-between items-start gap-6 max-w-5xl mx-auto"
+        >
+          <div>
+            <h4 class="text-lg font-bold text-amber-800">
+              Office of the Director of Socials & Culture
+            </h4>
+            <p class="text-sm text-gray-700 mt-1">
+              Great Ife Students' Union — Obafemi Awolowo University
+            </p>
+            <p class="text-sm text-gray-700 mt-2">
+              For inquiries and reservations:<br />
+              Email: <em>support@oonisuconcert.com</em>
+            </p>
+          </div>
+          <div class="text-sm text-gray-700 md:text-right">
+            <p class="font-semibold text-amber-800">
+              A Royal Celebration • A Cultural Legacy
+            </p>
+            <p class="mt-2">
+              © 2025 House of Oduduwa & Great Ife Students' Union.
+            </p>
+            <p>All Rights Reserved.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const menuBtn = document.getElementById("menuBtn");
+      const mobileMenu = document.getElementById("mobileMenu");
+      menuBtn.addEventListener("click", () =>
+        mobileMenu.classList.toggle("hidden")
+      );
+      document.querySelectorAll("#mobileMenu a").forEach((link) => {
+        link.addEventListener("click", () =>
+          mobileMenu.classList.add("hidden")
+        );
+      });
+    </script>
+  </body>
+</html>
